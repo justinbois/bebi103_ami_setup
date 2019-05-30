@@ -10,7 +10,7 @@ conda update -q -y conda;
 conda install -y numpy cython;
 conda config --add channels conda-forge;
 conda config --add channels defaults;
-conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh altair arviz holoviews watermark tqdm matplotlib seaborn ipython jupyter jupyterlab nodejs xarray netcdf4 awscli;
+conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh altair arviz watermark tqdm matplotlib seaborn ipython jupyter jupyterlab nodejs xarray netcdf4 awscli;
 conda install -y -c pyviz holoviews datashader;
 pip install pystan;
 pip install altair-catplot;
