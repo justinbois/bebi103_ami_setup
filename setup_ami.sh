@@ -20,7 +20,6 @@ pip install bokeh-catplot;
 pip install bebi103;
 pip install black;
 pip install blackcellmagic;
-pip install watermark;
 jupyter labextension install --no-build @ijmbarr/jupyterlab_spellchecker;
 jupyter labextension install --no-build @pyviz/jupyterlab_pyviz;
 jupyter lab build;
