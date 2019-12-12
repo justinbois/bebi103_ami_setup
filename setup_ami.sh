@@ -8,7 +8,8 @@ echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bashrc;
 source ~/.bashrc;
 conda update -q -y conda;
 conda install -y numpy cython;
-conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython jupyter jupyterlab nodejs xarray netcdf4;
+conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab nodejs xarray netcdf4;
+# pip install recommonmark commonmark nbsphinx sphinx-rtd-theme
 conda install -y -c pyviz holoviz;
 pip install awscli;
 pip install watermark;
