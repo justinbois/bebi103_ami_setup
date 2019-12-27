@@ -8,7 +8,7 @@ echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bashrc;
 source ~/.bashrc;
 conda update -q -y conda;
 conda install -y numpy cython;
-conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab nodejs xarray netcdf4;
+conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab black nodejs xarray netcdf4 hypothesis;
 # pip install recommonmark commonmark nbsphinx sphinx-rtd-theme
 conda install -y -c pyviz holoviz;
 pip install awscli;
@@ -28,6 +28,6 @@ echo 'alias mv="mv -i"' >> ~/.bashrc;
 echo 'alias cp="cp -i"' >> ~/.bashrc;
 echo 'alias ls="ls -FGh"' >> ~/.bashrc;
 echo 'export LSCOLORS="gxfxcxdxCxegedabagacad"' >> ~/.bashrc;
-# wget https://s3.amazonaws.com/bebi103.caltech.edu/2018/data/data.tar;
-# tar -xvf data.tar;
-# rm ./data.tar;
+wget https://s3.amazonaws.com/bebi103.caltech.edu/2020b/data.tar;
+tar -xvf data.tar;
+rm ./data.tar;
