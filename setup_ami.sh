@@ -26,7 +26,7 @@ pip install bokeh-catplot;
 pip install bebi103;
 pip install blackcellmagic;
 pip install cmdstanpy;
-python -c "import cmdstanpy; cmdstanpy.install_cmdstan()"
+python -c "import cmdstanpy; cmdstanpy.install_cmdstan()";
 
 # No pystan, since we're using cmdstanpy
 # pip install pystan;
