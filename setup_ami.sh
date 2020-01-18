@@ -21,6 +21,7 @@ conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh 
 conda install -y -c pyviz holoviz;
 pip install awscli;
 pip install watermark;
+pip install anndata;
 pip install arviz;
 pip install bokeh-catplot;
 pip install bebi103;
