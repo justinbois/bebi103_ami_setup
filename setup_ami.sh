@@ -45,7 +45,7 @@ echo 'export PS1="\[\e[1;32m\]\u\[\e[0m\]@\e[1;36m\]\h\[\e[0m\] [\w]\n% "' >> ~/
 echo 'alias rm="rm -i"' >> ~/.bashrc;
 echo 'alias mv="mv -i"' >> ~/.bashrc;
 echo 'alias cp="cp -i"' >> ~/.bashrc;
-echo 'alias ls="ls -FGh"' >> ~/.bashrc;
+echo 'alias ls="ls --color -FGh"' >> ~/.bashrc;
 echo 'export LSCOLORS="gxfxcxdxCxegedabagacad"' >> ~/.bashrc;
 echo 'alias bebi103_update="~/bebi103_update/bebi103_update.sh"' >> ~/.bashrc;
 
@@ -56,3 +56,7 @@ rm -f ./data.tar;
 
 # Clean up miniconda
 rm -f miniconda.sh;
+
+# Final updates
+conda update --all;
+
