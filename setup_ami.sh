@@ -58,5 +58,5 @@ rm -f ./data.tar;
 rm -f miniconda.sh;
 
 # Final updates
-conda update --all;
+conda update -y --all;
 
