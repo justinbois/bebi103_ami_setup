@@ -13,7 +13,7 @@ source ~/.bashrc;
 # Install packages
 conda update -q -y conda;
 conda install -y numpy cython;
-conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab black nodejs xarray netcdf4 ujson h5py hypothesis;
+conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab black nodejs xarray netcdf4 ujson h5py arviz hypothesis;
 
 # Uncomment to install sphinx packages for building course
 # pip install recommonmark commonmark nbsphinx sphinx-rtd-theme
@@ -22,7 +22,6 @@ conda install -y -c pyviz holoviz;
 pip install awscli;
 pip install watermark;
 pip install anndata;
-pip install arviz;
 pip install bokeh-catplot;
 pip install bebi103;
 pip install blackcellmagic;
