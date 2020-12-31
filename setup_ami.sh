@@ -2,6 +2,11 @@
 sudo yum -y update;
 sudo yum -y install git;
 sudo yum -y groupinstall "Development Tools";
+sudo yum -y install gcc64-c++ libcurl-devel
+
+# Make sure have up-to-date compiler
+export CXX=g++64
+export CC=gcc64
 
 # Install miniconda
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
@@ -23,9 +28,10 @@ pip install awscli;
 pip install watermark;
 pip install anndata;
 pip install arviz;
-pip install bokeh-catplot;
+pip install iqplot;
 pip install bebi103;
 pip install blackcellmagic;
+pip install multiprocess;
 pip install cmdstanpy;
 python -c "import cmdstanpy; cmdstanpy.install_cmdstan()";
 
@@ -46,11 +52,16 @@ echo 'alias rm="rm -i"' >> ~/.bashrc;
 echo 'alias mv="mv -i"' >> ~/.bashrc;
 echo 'alias cp="cp -i"' >> ~/.bashrc;
 echo 'alias ls="ls -FGh"' >> ~/.bashrc;
+echo 'export CXX=g++64' >> ~/.bashrc;
+echo 'export CC=gcc64' >> ~/.bashrc;
 echo 'export LSCOLORS="gxfxcxdxCxegedabagacad"' >> ~/.bashrc;
 echo 'alias bebi103_update="~/bebi103_update/bebi103_update.sh"' >> ~/.bashrc;
+source ~/.bashrc;
 
 # Get the data sets
-wget https://s3.amazonaws.com/bebi103.caltech.edu/2020b/data.tar;
+
+# No data set for now
+wget https://s3.amazonaws.com/bebi103.caltech.edu/data.tar;
 tar -xvf data.tar;
 rm -f ./data.tar;
 
