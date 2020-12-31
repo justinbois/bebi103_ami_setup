@@ -2,14 +2,14 @@
 sudo yum -y update;
 sudo yum -y install git;
 sudo yum -y groupinstall "Development Tools";
-sudo yum -y install gcc64-c++ libcurl-devel
+sudo yum -y install gcc64-c++ libcurl-devel;
 
-# Make sure have up-to-date compiler
-export CXX=g++64
-export CC=gcc64
+# Make sure have up-to-date compiler (no longer relevant on AWS)
+# export CXX=g++64
+# export CC=gcc64
 
 # Install miniconda
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 bash ./miniconda.sh -b -p $HOME/miniconda;
 export PATH="$HOME/miniconda/bin:$PATH";
 echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bashrc;
@@ -19,11 +19,11 @@ source ~/.bashrc;
 conda update -q -y conda;
 conda install -y numpy cython;
 conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab black nodejs xarray netcdf4 ujson h5py hypothesis;
+conda install -y colorcet dask datashader fastparquet holoviews hvplot panel param;
 
 # Uncomment to install sphinx packages for building course
 # pip install recommonmark commonmark nbsphinx sphinx-rtd-theme
 
-conda install -y -c pyviz holoviz;
 pip install awscli;
 pip install watermark;
 pip install anndata;
