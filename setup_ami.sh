@@ -4,7 +4,7 @@ sudo yum -y install git;
 sudo yum -y groupinstall "Development Tools";
 sudo yum -y install gcc64-c++ libcurl-devel;
 
-# Make sure have up-to-date compiler (no longer relevant on AWS)
+# Make sure have up-to-date compiler (no longer relevant on AWS, commented out)
 # export CXX=g++64
 # export CC=gcc64
 
@@ -27,6 +27,7 @@ conda install -y colorcet dask datashader fastparquet holoviews hvplot panel par
 pip install awscli;
 pip install watermark;
 pip install anndata;
+
 pip install arviz;
 pip install iqplot;
 pip install bebi103;
@@ -52,8 +53,11 @@ echo 'alias rm="rm -i"' >> ~/.bashrc;
 echo 'alias mv="mv -i"' >> ~/.bashrc;
 echo 'alias cp="cp -i"' >> ~/.bashrc;
 echo 'alias ls="ls -FGh"' >> ~/.bashrc;
-echo 'export CXX=g++64' >> ~/.bashrc;
-echo 'export CC=gcc64' >> ~/.bashrc;
+
+# No longer necessary to specify compilers
+# echo 'export CXX=g++64' >> ~/.bashrc;
+# echo 'export CC=gcc64' >> ~/.bashrc;
+
 echo 'export LSCOLORS="gxfxcxdxCxegedabagacad"' >> ~/.bashrc;
 echo 'alias bebi103_update="~/bebi103_update/bebi103_update.sh"' >> ~/.bashrc;
 source ~/.bashrc;
