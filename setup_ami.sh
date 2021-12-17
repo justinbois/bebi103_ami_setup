@@ -22,7 +22,7 @@ conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh 
 conda install -y colorcet dask datashader fastparquet holoviews hvplot panel param;
 
 # Uncomment to install sphinx packages for building course
-# pip install recommonmark commonmark nbsphinx sphinx-rtd-theme
+# pip install recommonmark commonmark nbsphinx sphinx-rtd-theme sphinx_copybutton
 
 pip install awscli;
 pip install watermark;
