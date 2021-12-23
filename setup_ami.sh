@@ -15,22 +15,31 @@ export PATH="$HOME/miniconda/bin:$PATH";
 echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bashrc;
 source ~/.bashrc;
 
+# Install nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash;
+. ~/.nvm/nvm.sh;
+nvm install node;
+
 # Install packages
 conda update -q -y conda;
 conda install -y numpy cython;
-conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab black nodejs xarray netcdf4 ujson h5py hypothesis;
-conda install -y colorcet dask datashader fastparquet holoviews hvplot panel param;
+conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab black xarray netcdf4 ujson h5py hypothesis;
+conda install -y colorcet dask datashader fastparquet holoviews hvplot panel param selenium;
+conda install -c -y bokeh jupyter_bokeh
 
 # Uncomment to install sphinx packages for building course
-# pip install recommonmark commonmark nbsphinx sphinx-rtd-theme
+# pip install recommonmark commonmark nbsphinx sphinx-rtd-theme sphinx-copybutton sphinx-togglebutton
 
 pip install awscli;
 pip install watermark;
 pip install anndata;
+pip install jupyterlab-spellchecker;
+pip install jupytext;
 
 pip install arviz;
 pip install iqplot;
 pip install bebi103;
+pip install black;
 pip install blackcellmagic;
 pip install multiprocess;
 pip install cmdstanpy;
@@ -38,11 +47,6 @@ python -c "import cmdstanpy; cmdstanpy.install_cmdstan()";
 
 # No pystan, since we're using cmdstanpy
 # pip install pystan;
-
-# Set up Jupyter
-jupyter labextension install --no-build @ijmbarr/jupyterlab_spellchecker;
-jupyter labextension install --no-build @pyviz/jupyterlab_pyviz;
-jupyter lab build;
 
 # Clone the updater
 git clone https://github.com/justinbois/bebi103_update.git;
