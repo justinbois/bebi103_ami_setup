@@ -49,12 +49,14 @@ dependencies:
   - pip:
     - altair
     - arviz
+    - awscli
     - bebi103
     - black
     - blackcellmagic
     - cmdstanpy
     - commonmark
     - iqplot
+    - jupytext
     - jupyter-cache
     - jupyterlab
     - jupyter_bokeh
