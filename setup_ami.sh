@@ -16,33 +16,18 @@ echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bashrc;
 source ~/.bashrc;
 
 # Install nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash;
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash;
 . ~/.nvm/nvm.sh;
 nvm install node;
 
 # Install packages
-conda update -q -y conda;
-conda install -y numpy cython;
-conda install -y scipy pandas numba scikit-image scikit-learn statsmodels bokeh tqdm matplotlib seaborn ipython xlrd jupyter jupyterlab black xarray netcdf4 ujson h5py hypothesis;
-conda install -y colorcet dask datashader fastparquet holoviews hvplot panel param selenium;
-conda install -c -y bokeh jupyter_bokeh
+wget https://raw.githubusercontent.com/justinbois/bebi103_ami_setup/master/bebi103_rtc.yml;
+conda env create -f bebi103_rtc.yml ;
 
 # Uncomment to install sphinx packages for building course
 # pip install recommonmark commonmark nbsphinx sphinx-rtd-theme sphinx-copybutton sphinx-togglebutton
 
-pip install awscli;
-pip install watermark;
-pip install anndata;
-pip install jupyterlab-spellchecker;
-pip install jupytext;
-
-pip install arviz;
-pip install iqplot;
-pip install bebi103;
-pip install black;
-pip install blackcellmagic;
-pip install multiprocess;
-pip install cmdstanpy;
+# Build cmdstan
 python -c "import cmdstanpy; cmdstanpy.install_cmdstan()";
 
 # No pystan, since we're using cmdstanpy
@@ -64,14 +49,14 @@ echo 'alias ls="ls -FGh"' >> ~/.bashrc;
 
 echo 'export LSCOLORS="gxfxcxdxCxegedabagacad"' >> ~/.bashrc;
 echo 'alias bebi103_update="~/bebi103_update/bebi103_update.sh"' >> ~/.bashrc;
+echo 'conda activate bebi103' >> ~/.bashrc;
 source ~/.bashrc;
 
 # Get the data sets
-
-# No data set for now
 wget https://s3.amazonaws.com/bebi103.caltech.edu/data.tar;
 tar -xvf data.tar;
 rm -f ./data.tar;
 
 # Clean up miniconda
+rm -f bebi103_rtc.yml;
 rm -f miniconda.sh;
