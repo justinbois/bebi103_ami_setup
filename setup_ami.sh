@@ -49,8 +49,10 @@ echo 'alias ls="ls -FGh"' >> ~/.bashrc;
 
 echo 'export LSCOLORS="gxfxcxdxCxegedabagacad"' >> ~/.bashrc;
 echo 'alias bebi103_update="~/bebi103_update/bebi103_update.sh"' >> ~/.bashrc;
-echo 'conda activate bebi103' >> ~/.bashrc;
 source ~/.bashrc;
+
+conda init bash;
+echo 'conda activate bebi103' >> ~/.bashrc;
 
 # Get the data sets
 wget https://s3.amazonaws.com/bebi103.caltech.edu/data.tar;
