@@ -16,9 +16,11 @@ echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bashrc;
 source ~/.bashrc;
 
 # Install nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash;
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash;
 . ~/.nvm/nvm.sh;
-nvm install node;
+nvm install --lts;
+node -e "console.log('Running Node.js ' + process.version)";
+# nvm install node;
 
 # Install packages
 wget https://raw.githubusercontent.com/justinbois/bebi103_ami_setup/master/bebi103_rtc.yml;
